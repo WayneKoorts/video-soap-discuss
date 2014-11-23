@@ -1,5 +1,42 @@
 {% extends "discuss/base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <h1>Home</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Subjects -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Subjects</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {% for subject in subjects %}
+                            <a class="list-group-item" href="/subjects/{{ subject.name }}/">{{ subject.name }}</a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!-- Recent Posts -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Recent Posts</h3>
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Active Discussions</h3>
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
