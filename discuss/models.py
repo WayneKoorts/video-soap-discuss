@@ -13,7 +13,7 @@ class Discussion(models.Model):
     title = models.CharField(max_length = 300, unique = True)
     creator = models.ForeignKey(User)
     createdTimestamp = models.DateTimeField(auto_now_add = True)
-    viewCount = models.PositiveIntegerField()
+    viewCount = models.PositiveIntegerField(blank = True, default = 0)
     subject = models.ForeignKey("Subject", related_name = "discussions")
     tags = models.ManyToManyField("Tag")
 
