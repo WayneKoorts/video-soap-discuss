@@ -39,8 +39,8 @@ class Post(models.Model):
 
     # The following fields are mutually exclusive. Which one is filled
     # depends on the postType value.
-    mediaUrl = models.URLField() # Applies to audio and video.
-    text = models.TextField()
+    mediaUrl = models.URLField(blank = True, null = True) # Applies to audio and video.
+    text = models.TextField(blank = True, null = True)
 
     def __str__(self):
         return str.format("{0} in {1}", self.user.username, self.discussion.title)
