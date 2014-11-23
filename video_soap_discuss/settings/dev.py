@@ -17,7 +17,7 @@ DATABASES = {
 STATIC_URL = "/static/"
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, "../../templates"),
+    os.path.join(BASE_DIR, "../templates"),
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
