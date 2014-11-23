@@ -1,0 +1,10 @@
+{% extends "discuss/base.html" %}
+{% block title %}{{ discussion.title }}{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+        <li><a href="{% url "discuss.views.subjects.index" %}">Subjects</a></li>
+        <li><a href="{% url "discuss.views.subjects.view" discussion.subject.id %}">{{ discussion.subject.name }}</a></li>
+        <li class="active">{{ discussion.title }}</li>
+    </ol>
+    <h2>{{ discussion.title }}</h2>
+{% endblock %}

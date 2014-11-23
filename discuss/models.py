@@ -15,7 +15,7 @@ class Discussion(models.Model):
     createdTimestamp = models.DateTimeField(auto_now_add = True)
     viewCount = models.PositiveIntegerField(blank = True, default = 0)
     subject = models.ForeignKey("Subject", related_name = "discussions")
-    tags = models.ManyToManyField("Tag")
+    tags = models.ManyToManyField("Tag", blank = True)
 
     def __str__(self):
         return self.title
