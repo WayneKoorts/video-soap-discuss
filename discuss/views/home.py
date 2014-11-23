@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from discuss.models import *
 
-def home(request):
+def index(request):
     subjects = Subject.objects.all()
 
     return render(request, "discuss/home.html", {
