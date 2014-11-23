@@ -1,0 +1,15 @@
+{% extends "discuss/base.html" %}
+{% block title %}{{ subject.name }}{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+        <li><a href="{% url "discuss.views.subjects.index" %}">Subjects</a></li>
+        <li class="active">{{ subject.name }}</li>
+    </ol>
+    {% if discussions %}
+        {% for discussion in discussions %}
+            <h2>{{ discussion.title }}</h2>
+        {% endfor %}
+    {% else %}
+        <h3>No discussions found.</h3>
+    {% endif %}
+{% endblock %}

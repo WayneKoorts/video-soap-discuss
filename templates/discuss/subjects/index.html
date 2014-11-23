@@ -1,0 +1,17 @@
+{% extends "discuss/base.html" %}
+{% block title %}Subjects{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            {% if subjects %}
+                <ul class="list-group">
+                    {% for subject in subjects %}
+                        <a class="list-group-item" href="{% url "discuss.views.subjects.view" subject.id %}">{{ subject.name }}</a>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2>No subjects found.</h2>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
